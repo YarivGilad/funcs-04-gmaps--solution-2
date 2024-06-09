@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css?family=Griffy|Yanone+Kaffeesatz:400,700");
+
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 10px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: papayawhip;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*border:aqua dashed 3px; */
+  /*color:papayawhip*/
+}
+.main {
+  height: 70vh;
+}
+/*--------------------*/
+.app {
+  background: lightskyblue;
+  padding: 3rem 7.5rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  width: 80vw;
+}
+
+.headline {
+  font-size: 5rem;
+  font-weight: normal;
+  font-family: "Griffy", cursive;
+  text-align: center;
+  color: DarkSlateBlue;
+}
+.paragraph {
+  font-size: 3.8rem;
+  font-weight: 400;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  text-align: center;
+  color: DarkSlateBlue;
+}
+.white-text {
+  color: mintcream;
+}
+.thumb {
+  border-radius: 0.8rem;
+  margin-top: 3rem;
+  padding: 3rem 7.5rem;
+  background-color: DarkSalmon;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.top-bar {
+  background: slategray;
+  width: 100%;
+  height: 70px;
+  padding: 20px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.top-bar h1 {
+  font-size: 3rem;
+  font-weight: normal;
+  font-family: "Griffy", cursive;
+  color: papayawhip;
+}
+.logo {
+  height: 5rem;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+input {
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 0 2rem;
+  font-size: 2rem;
+  border: 2px solid transparent;
+  transition: border 1s;
+}
+input:focus {
+  border: 2px deeppink solid;
+}
+button {
+  outline-style: none;
+  border-style: none;
+  background: DeepPink;
+  text-transform: uppercase;
+  color: white;
+  font-size: 2rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  margin-right: 1rem;
+}
+button:hover {
+  background: MediumVioletRed;
+}
+button:active {
+  background: fuchsia;
+}
+.map-box {
+  height: 90%;
+}
+.controls-box span{
+  font-size: larger;
+  font-size: 3.8rem;
+  font-weight: 400;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+}
+/*Generic CSS Classes*/
+.cap {
+  text-transform: capitalize;
+}
+.mb20 {
+  margin-bottom: 2rem;
+}
+.mt20 {
+  margin-top: 2rem;
+}
+.fz35 {
+  font-size: 3.5rem;
+}
+.fz30 {
+  font-size: 3rem;
+}
+.fz25 {
+  font-size: 2.5rem;
+}
+
+.hbox {
+  display: flex;
+}
+.vbox {
+  display: flex;
+  flex-direction: column;
+}
+.space-between,
+.sb {
+  justify-content: space-between;
+}
+.space-around,
+.sa {
+  justify-content: space-around;
+}
+.align-items-center,
+.ai-center,
+.aic {
+  align-items: center;
+}
+.align-items-start,
+.ai-start,
+.ais {
+  align-items: flex-start;
+}
+.grow-1,
+.g1 {
+  flex-grow: 1;
+}
+.text-left,
+.tl {
+  text-align: left;
+}
+.dev {
+  border: fuchsia 2px dashed;
+}
