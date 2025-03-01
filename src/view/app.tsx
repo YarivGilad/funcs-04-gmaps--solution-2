@@ -1,7 +1,7 @@
-import { useState, useRef, MouseEvent, useEffect } from "react";
+import { useState, useRef, MouseEvent } from "react";
 import { TopBar } from "./top-bar";
 import { GoogleMap } from "./google-map";
-import { LatLng } from "./types";
+import { LatLng, MarkerInfo } from "./types";
 import { createLogger } from "../utils/logger.utils";
 
 const log = createLogger("App -->");
@@ -18,7 +18,7 @@ export function App() {
   });
 
   const [zoom, setZoom] = useState(8);
-  const [markerInfo, setMarkerInfo] = useState({title:'',type:''});
+  const [markerInfo, setMarkerInfo] = useState<MarkerInfo>({title:'',type:''});
 
   function reposition(event: MouseEvent) {
     const city = (event.target as HTMLElement).dataset.city;
@@ -46,9 +46,10 @@ export function App() {
   };
 
   function addMarker(){
+    if(!titleInput.current || !typeInput.current ) return;
     setMarkerInfo({
-      title: titleInput.current?.value || '',
-      type: typeInput.current?.value || ''
+      title: titleInput.current.value,
+      type: typeInput.current.value
     });
   }
 
@@ -61,7 +62,12 @@ export function App() {
       };
       
       function success(position: GeolocationPosition) {
+
+          // const lat  = position.coords.latitude;
+          // const lng  = position.coords.longitude;
+
           const { latitude: lat, longitude: lng } = position.coords;
+          
           setLatlng({ lat, lng });
           setZoom(16);
       }
